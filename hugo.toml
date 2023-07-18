@@ -1,8 +1,39 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Alphafold on Amazon Omics'
 theme = "hugo-theme-learn"
 
 [outputs]
 home = [ "HTML", "AMP", "RSS", "JSON"]
 page = [ "HTML", "AMP"]
+
+[params]
+editURL = "https://github.com/cloud303/alphafold-workshop/tree/master/content/"
+themeVariant = "mine"
+showVisitedLinks = true
+description = "Running AlphaFold with Amazon Omics"
+disableSearch = false
+disableAssetsBusting = false
+disableLanguageSwitchingButton = true
+disableShortcutsTitle = false
+disableLandingPageButton = true
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-cloud'></i> Cloud303"
+url = "https://cloud303.io/"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Github"
+url = "https://github.com/Cloud303/alphafold-workshop"
+weight = 1
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-rss'></i> Blog"
+url = "https://cloud303.io/blog"
+weight = 20
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-envelope'></i> Feedback / Questions?"
+url = "mailto:tfurlong@cloud303.io"
+weight = 30

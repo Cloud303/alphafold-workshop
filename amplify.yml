@@ -3,7 +3,7 @@ frontend:
   phases:
     build:
       commands:
-        - hugo
+        - hugo -D
   artifacts:
     baseDirectory: public
     files:

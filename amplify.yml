@@ -1,9 +1,13 @@
 version: 0.1
 frontend:
   phases:
+    preBuild:
+      commands:
+      - curl -OL https://golang.org/dl/go1.15.7.linux-amd64.tar.gz
+      - tar -C /usr/local -xzf ./go1.15.7.linux-amd64.tar.gz
     build:
       commands:
-        - hugo -D
+        - PATH=$PATH:/usr/local/go/bin hugo -D
   artifacts:
     baseDirectory: public
     files:

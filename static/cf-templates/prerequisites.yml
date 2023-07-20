@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: Omics Resources supporting AlphaFold
+Description: Resources supporting AlphaFold + Amazon Omics workshop
 
 Resources:
 

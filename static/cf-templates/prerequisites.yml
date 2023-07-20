@@ -1,0 +1,76 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Omics Resources supporting AlphaFold
+
+Resources:
+
+  outputBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub omics-output-${AWS::AccountId}-${AWS::Region}
+
+  omicsWorkflowsRole:
+    Type: AWS::IAM::Role
+    Properties: 
+      Description: Role that can be used to run Omics Workflows
+      RoleName: !Sub omics-workflows-${AWS::StackName}
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: omics.amazonaws.com
+            Action: sts:AssumeRole
+            Condition:
+              StringEquals:
+                aws:SourceAccount: !Ref AWS::AccountId
+              ArnLike:
+                aws:SourceArn: !Sub arn:${AWS::Partition}:omics:${AWS::Region}:${AWS::AccountId}:run/*
+      Policies: 
+        - PolicyName: OmicsStartRun
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:GetObject
+                Resource:
+                  - !Sub arn:${AWS::Partition}:s3:::${outputBucket}/*
+                  - !Sub arn:${AWS::Partition}:s3:::omics-${AWS::Region}/*
+              - Effect: Allow
+                Action:
+                  - s3:ListBucket
+                Resource:
+                  - !Sub arn:${AWS::Partition}:s3:::${outputBucket}
+                  - !Sub arn:${AWS::Partition}:s3:::omics-${AWS::Region}
+              - Effect: Allow
+                Action:
+                  - s3:PutObject
+                Resource:
+                  - !Sub arn:${AWS::Partition}:s3:::${outputBucket}/*
+              - Effect: Allow
+                Action:
+                  - logs:DescribeLogStreams
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource:
+                  - !Sub arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/omics/WorkflowLog:log-stream:*
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                Resource:
+                  - !Sub arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/omics/WorkflowLog:*
+              - Effect: Allow
+                Action:
+                  - ecr:BatchGetImage
+                  - ecr:GetDownloadUrlForLayer
+                  - ecr:BatchCheckLayerAvailability
+                Resource:
+                  - !Sub arn:${AWS::Partition}:ecr:${AWS::Region}:${AWS::AccountId}:repository/*
+
+      
+
+Outputs:
+  OutputBucket:
+    Value: !Ref outputBucket
+  WorkflowsRoleName:
+    Value: !Ref omicsWorkflowsRole

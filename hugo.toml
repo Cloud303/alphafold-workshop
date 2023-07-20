@@ -8,9 +8,9 @@ home = [ "HTML", "AMP", "RSS", "JSON"]
 page = [ "HTML", "AMP"]
 
 [params]
-editURL = "https://github.com/cloud303/alphafold-workshop/tree/master/content/"
+editURL = "https://github.com/cloud303/alphafold-workshop/tree/main/content/"
 themeVariant = "mine"
-showVisitedLinks = true
+showVisitedLinks = false
 description = "Running AlphaFold with Amazon Omics"
 disableSearch = false
 disableAssetsBusting = false

@@ -1,12 +1,12 @@
 +++
-title = "Custom Protein Folding Workflows"
+title = "Custom Workflows"
 date = 2023-07-17T20:40:56-06:00
 weight = 4
 chapter = true
 pre = "<b>IV - </b>"
 +++
 
-# Custom Protein Folding Workflows
+# Custom Workflows
 
 In this chapter we will learn how to run custom Omics Workflows. Unlike Ready2Run workflows, custom Omics Workflows allow us to control every aspect of the workflow. Some situations where this might be useful include:
 

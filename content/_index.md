@@ -6,4 +6,6 @@ draft: true
 
 # Welcome to the AlphaFold on Amazon Omics Workshop
 
+![proteinfolding_omics](images/proteinfolding_omics.png)
+
 This is the AlphaFold on Amazon Omics workshop, presented by [Cloud303](https://cloud303.io). To get started, head to the [Overview](/01-overview).

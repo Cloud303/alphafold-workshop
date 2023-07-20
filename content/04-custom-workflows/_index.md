@@ -16,4 +16,6 @@ In this chapter we will learn how to run custom Omics Workflows. Unlike Ready2Ru
 * Running your own workflows which were built in-house
 * Additional insight into cost using AWS tags
 
-This section uses a popular community curated workflow provided by the [nf-core project](https://nf-co.re/). The details of customizing the workflow is not covered by this workshop.
+This section uses a popular community curated workflow provided by the [nf-core project](https://nf-co.re/). The details of customizing the workflow are not covered by this workshop.
+
+![omics-r2r-vs-private-workflows.jpeg](images/omics-r2r-vs-private-workflows.jpeg)

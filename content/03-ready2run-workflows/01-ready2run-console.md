@@ -2,7 +2,7 @@
 title: "a. Ready2Run Console"
 date: 2023-07-19T17:50:48-06:00
 draft: true
-weight: 2
+weight: 1
 ---
 
 

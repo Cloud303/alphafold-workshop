@@ -67,10 +67,40 @@ Resources:
                 Resource:
                   - !Sub arn:${AWS::Partition}:ecr:${AWS::Region}:${AWS::AccountId}:repository/*
 
-      
+  # NOTEBOOK -----------------------------------------------------
+  notebookInstance:
+    Type: AWS::SageMaker::NotebookInstance
+    Properties:
+      InstanceType: "ml.t2.large"
+      RoleArn: !GetAtt executionRole.Arn
+      DefaultCodeRepository: https://github.com/Cloud303/alphafold-workshop-notebook.git
+      VolumeSizeInGB: 20
+
+  executionRole: 
+    Type: AWS::IAM::Role
+    Properties: 
+      AssumeRolePolicyDocument: 
+        Version: "2012-10-17"
+        Statement: 
+          - 
+            Effect: "Allow"
+            Principal: 
+              Service: 
+                - "sagemaker.amazonaws.com"
+            Action: 
+              - "sts:AssumeRole"
+      Path: "/"
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+
+# END NOTEBOOK -------------------------------------------------
+
 
 Outputs:
   OutputBucket:
     Value: !Ref outputBucket
   WorkflowsRoleName:
     Value: !Ref omicsWorkflowsRole
+  NotebookInstance:
+    Value: !GetAtt notebookInstance.NotebookInstanceName

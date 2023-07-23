@@ -8,6 +8,4 @@ pre = "<b>I - </b>"
 
 # Overview
 
-In this workshop, we will learn two methods of running AlphaFold using Amazon Omics. 
-
-First, we will run AlphaFold using Ready2Run workflows. Then we will run protein folding through a pipeline provided by the [nf-core project](https://nf-co.re/) and demonstrate how this approach provides us with advanced customization capabilities.
+In this workshop, we will learn how to run AlphaFold using Amazon Omics Ready2Run workflows. Then we will visualize our result using Cloud9.

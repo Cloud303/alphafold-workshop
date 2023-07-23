@@ -1,3 +1,6 @@
 [submodule "themes/hugo-theme-learn"]
 	path = themes/hugo-theme-learn
 	url = https://github.com/matcornic/hugo-theme-learn.git
+[submodule "alphafold-workshop-notebook"]
+	path = alphafold-workshop-notebook
+	url = https://github.com/cloud303/alphafold-workshop-notebook/

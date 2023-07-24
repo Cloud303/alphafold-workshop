@@ -8,4 +8,4 @@ pre = "<b>I - </b>"
 
 # Overview
 
-In this workshop, we will learn how to run AlphaFold using Amazon Omics Ready2Run workflows. Then we will visualize our result using Cloud9.
+In this workshop, we will learn how to run AlphaFold using Amazon Omics Ready2Run workflows. Then we will visualize our result using SageMaker Notebooks.

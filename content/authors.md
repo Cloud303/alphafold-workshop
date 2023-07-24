@@ -12,5 +12,5 @@ This workshop has been developed by:
 
 #### Collaborators
 
-- **Sujaiy Shivakumar** - Chief Technology Officer, Cloud303 ([email](mailto:sujaiy@cloud303.io))
 - **Phil Supinski** - Chief Executive Officer, Cloud303 ([email](mailto:psupinski@cloud303.io))
+- **Sujaiy Shivakumar** - Chief Technology Officer, Cloud303 ([email](mailto:sujaiy@cloud303.io))
